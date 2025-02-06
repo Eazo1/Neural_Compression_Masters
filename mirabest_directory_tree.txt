@@ -1,0 +1,12 @@
+/share/nas2_3/amahmoud/data/MiraBest
+/share/nas2_3/amahmoud/data/MiraBest/MiraBest_N_batches.tar.gz
+/share/nas2_3/amahmoud/data/MiraBest/N_batches
+/share/nas2_3/amahmoud/data/MiraBest/N_batches/data_batch_6
+/share/nas2_3/amahmoud/data/MiraBest/N_batches/data_batch_1
+/share/nas2_3/amahmoud/data/MiraBest/N_batches/data_batch_7
+/share/nas2_3/amahmoud/data/MiraBest/N_batches/batches.meta
+/share/nas2_3/amahmoud/data/MiraBest/N_batches/data_batch_2
+/share/nas2_3/amahmoud/data/MiraBest/N_batches/data_batch_5
+/share/nas2_3/amahmoud/data/MiraBest/N_batches/test_batch
+/share/nas2_3/amahmoud/data/MiraBest/N_batches/data_batch_4
+/share/nas2_3/amahmoud/data/MiraBest/N_batches/data_batch_3
