@@ -32,6 +32,7 @@ from itertools import combinations, product, cycle
 
 import matplotlib.pyplot as plt
 from torch.optim.lr_scheduler import CosineAnnealingLR
+from sklearn.mixture import GaussianMixture
 import wandb
 
 
@@ -109,6 +110,20 @@ class MemoryMappedDataset(Dataset):
         # Ensure only one tensor is returned
         return torch.tensor(self.data[idx], dtype=torch.float32).to(self.device)
 
+
+def fit_mog(image_data):
+    # Get the spatial coordinates (x, y) and the intensity (pixel value)
+    h, w = image_data.shape
+    y_coords, x_coords = np.meshgrid(np.arange(h), np.arange(w))
+    
+    # Flatten the coordinates and pixel values into a 2D array of shape (num_pixels, 3)
+    pixels = np.vstack([x_coords.ravel(), y_coords.ravel(), image_data.ravel()]).T
+    
+    # Fit a Gaussian Mixture Model to the spatial coordinates and pixel values
+    gmm = GaussianMixture(n_components=2)  # You can change n_components to fit more Gaussians
+    gmm.fit(pixels)
+    
+    return gmm
 
 #transform = transforms.Compose([
 #    transforms.ToTensor(),
