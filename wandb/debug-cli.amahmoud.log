@@ -1,0 +1,965 @@
+2025-02-24 17:29:14 ERROR Traceback (most recent call last):
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 1084, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep eazo-ahmad-abdelhakam-the-university-of-manchester/Standard AE/94nrapqm' not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/cli/cli.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/cli/cli.py", line 1677, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/wandb_agent.py", line 572, in agent
+    return run_agent(
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/wandb_agent.py", line 530, in run_agent
+    agent.run()
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/wandb_agent.py", line 192, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/apis/internal.py", line 130, in sweep
+    return self.api.sweep(*args, **kwargs)
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/apis/normalize.py", line 87, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 1084, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.errors.CommError: Sweep eazo-ahmad-abdelhakam-the-university-of-manchester/Standard AE/94nrapqm' not found
+
+2025-02-24 17:31:39 ERROR Traceback (most recent call last):
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 1084, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep eazo-ahmad-abdelhakam-the-university-of-manchester/Standard AE/xzt94dou' not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/cli/cli.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/cli/cli.py", line 1677, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/wandb_agent.py", line 572, in agent
+    return run_agent(
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/wandb_agent.py", line 530, in run_agent
+    agent.run()
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/wandb_agent.py", line 192, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/apis/internal.py", line 130, in sweep
+    return self.api.sweep(*args, **kwargs)
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/apis/normalize.py", line 87, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 1084, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.errors.CommError: Sweep eazo-ahmad-abdelhakam-the-university-of-manchester/Standard AE/xzt94dou' not found
+
+2025-02-24 17:38:58 ERROR Traceback (most recent call last):
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 1084, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+ValueError: Sweep eazo-ahmad-abdelhakam-the-university-of-manchester/Standard AE/rwtekd7k' not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/cli/cli.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/cli/cli.py", line 1677, in agent
+    wandb_agent.agent(sweep_id, entity=entity, project=project, count=count)
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/wandb_agent.py", line 572, in agent
+    return run_agent(
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/wandb_agent.py", line 530, in run_agent
+    agent.run()
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/wandb_agent.py", line 192, in run
+    sweep_obj = self._api.sweep(self._sweep_id, "{}")
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/apis/internal.py", line 130, in sweep
+    return self.api.sweep(*args, **kwargs)
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/apis/normalize.py", line 87, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "/share/nas2_3/amahmoud/.venv/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 1084, in sweep
+    raise ValueError(f"Sweep {entity}/{project}/{sweep} not found")
+wandb.errors.errors.CommError: Sweep eazo-ahmad-abdelhakam-the-university-of-manchester/Standard AE/rwtekd7k' not found
+
+2025-02-24 17:43:13 INFO Running runs: []
+2025-02-24 17:43:14 INFO Agent received command: run
+2025-02-24 17:43:14 INFO Agent starting run with config:
+	Gamma: 0
+2025-02-24 17:43:14 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=0
+2025-02-24 17:43:19 INFO Running runs: ['2xgbng7h']
+2025-02-24 17:45:01 INFO Cleaning up finished run: 2xgbng7h
+2025-02-24 17:45:02 INFO Agent received command: run
+2025-02-24 17:45:02 INFO Agent starting run with config:
+	Gamma: 10
+2025-02-24 17:45:02 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=10
+2025-02-24 17:45:07 INFO Running runs: ['agv2htft']
+2025-02-24 17:46:19 INFO Cleaning up finished run: agv2htft
+2025-02-24 17:46:19 INFO Agent received command: run
+2025-02-24 17:46:19 INFO Agent starting run with config:
+	Gamma: 100
+2025-02-24 17:46:19 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=100
+2025-02-24 17:46:24 INFO Running runs: ['18ovuseg']
+2025-02-24 17:47:37 INFO Cleaning up finished run: 18ovuseg
+2025-02-24 17:47:37 INFO Agent received command: run
+2025-02-24 17:47:37 INFO Agent starting run with config:
+	Gamma: 1000
+2025-02-24 17:47:37 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1000
+2025-02-24 17:47:42 INFO Running runs: ['r081c40f']
+2025-02-24 17:48:54 INFO Cleaning up finished run: r081c40f
+2025-02-24 17:48:55 INFO Agent received command: run
+2025-02-24 17:48:55 INFO Agent starting run with config:
+	Gamma: 10000
+2025-02-24 17:48:55 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=10000
+2025-02-24 17:49:00 INFO Running runs: ['ina415ei']
+2025-02-24 17:50:12 INFO Cleaning up finished run: ina415ei
+2025-02-24 17:50:12 INFO Agent received command: run
+2025-02-24 17:50:12 INFO Agent starting run with config:
+	Gamma: 20000
+2025-02-24 17:50:12 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=20000
+2025-02-24 17:50:17 INFO Running runs: ['vu0a977e']
+2025-02-24 17:51:29 INFO Cleaning up finished run: vu0a977e
+2025-02-24 17:51:29 INFO Agent received command: run
+2025-02-24 17:51:29 INFO Agent starting run with config:
+	Gamma: 50000
+2025-02-24 17:51:30 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=50000
+2025-02-24 17:51:35 INFO Running runs: ['e7ynfyrl']
+2025-02-24 17:52:47 INFO Cleaning up finished run: e7ynfyrl
+2025-02-24 17:52:47 INFO Agent received command: run
+2025-02-24 17:52:47 INFO Agent starting run with config:
+	Gamma: 100000
+2025-02-24 17:52:47 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=100000
+2025-02-24 17:52:52 INFO Running runs: ['rz5ugzqk']
+2025-02-24 17:54:04 INFO Cleaning up finished run: rz5ugzqk
+2025-02-24 17:54:04 INFO Agent received command: run
+2025-02-24 17:54:04 INFO Agent starting run with config:
+	Gamma: 500000
+2025-02-24 17:54:04 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=500000
+2025-02-24 17:54:09 INFO Running runs: ['r3qimufj']
+2025-02-24 17:55:22 INFO Cleaning up finished run: r3qimufj
+2025-02-24 17:55:22 INFO Agent received command: run
+2025-02-24 17:55:22 INFO Agent starting run with config:
+	Gamma: 1000000
+2025-02-24 17:55:22 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1000000
+2025-02-24 17:55:27 INFO Running runs: ['v7cg8xgz']
+2025-02-24 17:56:39 INFO Cleaning up finished run: v7cg8xgz
+2025-02-24 17:56:39 INFO Agent received command: run
+2025-02-24 17:56:39 INFO Agent starting run with config:
+	Gamma: 10000000
+2025-02-24 17:56:39 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=10000000
+2025-02-24 17:56:44 INFO Running runs: ['6hkjg829']
+2025-02-24 17:57:57 INFO Cleaning up finished run: 6hkjg829
+2025-02-24 17:57:57 INFO Agent received command: exit
+2025-02-24 17:57:57 INFO Received exit command. Killing runs and quitting.
+2025-02-24 18:06:43 INFO Running runs: []
+2025-02-24 18:06:44 INFO Agent received command: run
+2025-02-24 18:06:44 INFO Agent starting run with config:
+	Gamma: 0
+2025-02-24 18:06:44 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=0
+2025-02-24 18:06:49 INFO Running runs: ['hci37tcd']
+2025-02-24 18:08:01 INFO Cleaning up finished run: hci37tcd
+2025-02-24 18:08:02 INFO Agent received command: run
+2025-02-24 18:08:02 INFO Agent starting run with config:
+	Gamma: 1000
+2025-02-24 18:08:02 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1000
+2025-02-24 18:08:07 INFO Running runs: ['itochtn0']
+                                                                                                                                                                                                                                                                                                                                  2025-02-24 18:09:19 INFO Cleaning up finished run: itochtn0
+2025-02-24 18:09:19 INFO Agent received command: run
+2025-02-24 18:09:19 INFO Agent starting run with config:
+	Gamma: 2000
+2025-02-24 18:09:19 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=2000
+2025-02-24 18:09:24 INFO Running runs: ['dgi74se3']
+2025-02-24 18:10:37 INFO Cleaning up finished run: dgi74se3
+2025-02-24 18:10:38 INFO Agent received command: run
+2025-02-24 18:10:38 INFO Agent starting run with config:
+	Gamma: 3000
+2025-02-24 18:10:38 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=3000
+2025-02-24 18:10:43 INFO Running runs: ['p3q7qt9j']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:11:55 INFO Cleaning up finished run: p3q7qt9j
+2025-02-24 18:11:55 INFO Agent received command: run
+2025-02-24 18:11:55 INFO Agent starting run with config:
+	Gamma: 4000
+2025-02-24 18:11:55 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=4000
+2025-02-24 18:12:00 INFO Running runs: ['xqk33yco']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:13:12 INFO Cleaning up finished run: xqk33yco
+2025-02-24 18:13:12 INFO Agent received command: run
+2025-02-24 18:13:12 INFO Agent starting run with config:
+	Gamma: 5000
+2025-02-24 18:13:12 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=5000
+2025-02-24 18:13:17 INFO Running runs: ['g2rbfzk9']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:14:30 INFO Cleaning up finished run: g2rbfzk9
+2025-02-24 18:14:30 INFO Agent received command: run
+2025-02-24 18:14:30 INFO Agent starting run with config:
+	Gamma: 6000
+2025-02-24 18:14:30 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=6000
+2025-02-24 18:14:35 INFO Running runs: ['7f1gv3oh']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:15:48 INFO Cleaning up finished run: 7f1gv3oh
+2025-02-24 18:15:48 INFO Agent received command: run
+2025-02-24 18:15:48 INFO Agent starting run with config:
+	Gamma: 7000
+2025-02-24 18:15:48 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=7000
+2025-02-24 18:15:53 INFO Running runs: ['76dct8xq']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:17:05 INFO Cleaning up finished run: 76dct8xq
+2025-02-24 18:17:05 INFO Agent received command: run
+2025-02-24 18:17:05 INFO Agent starting run with config:
+	Gamma: 8000
+2025-02-24 18:17:05 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=8000
+2025-02-24 18:17:10 INFO Running runs: ['ykkim1p8']
+8i4psel
+2025-02-24 18:17:20 INFO Agent received command: run
+2025-02-24 18:17:20 INFO Agent starting run with config:
+	Gamma: 29144
+2025-02-24 18:17:20 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=29144
+2025-02-24 18:17:25 INFO Running runs: ['t1dtsd98']
+                                                                                                                                                                                                                                                                                                                                                  2025-02-24 18:18:37 INFO Cleaning up finished run: t1dtsd98
+2025-02-24 18:18:38 INFO Agent received command: run
+2025-02-24 18:18:38 INFO Agent starting run with config:
+	Gamma: 31028
+2025-02-24 18:18:38 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=31028
+2025-02-24 18:18:43 INFO Running runs: ['6tf8yfli']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:19:55 INFO Cleaning up finished run: 6tf8yfli
+2025-02-24 18:19:55 INFO Agent received command: run
+2025-02-24 18:19:55 INFO Agent starting run with config:
+	Gamma: 33032
+2025-02-24 18:19:55 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=33032
+2025-02-24 18:20:00 INFO Running runs: ['lp63qveq']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:21:12 INFO Cleaning up finished run: lp63qveq
+2025-02-24 18:21:13 INFO Agent received command: run
+2025-02-24 18:21:13 INFO Agent starting run with config:
+	Gamma: 35163
+2025-02-24 18:21:13 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=35163
+2025-02-24 18:21:18 INFO Running runs: ['7zlhd0cc']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:22:30 INFO Cleaning up finished run: 7zlhd0cc
+2025-02-24 18:22:30 INFO Agent received command: run
+2025-02-24 18:22:30 INFO Agent starting run with config:
+	Gamma: 37429
+2025-02-24 18:22:30 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=37429
+2025-02-24 18:22:35 INFO Running runs: ['hzfe6f73']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:23:48 INFO Cleaning up finished run: hzfe6f73
+2025-02-24 18:23:48 INFO Agent received command: run
+2025-02-24 18:23:48 INFO Agent starting run with config:
+	Gamma: 39836
+2025-02-24 18:23:48 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=39836
+2025-02-24 18:23:53 INFO Running runs: ['chm45jup']
+2025-02-24 18:24:51 INFO Cleaning up finished run: iakg4fts
+2025-02-24 18:24:51 INFO Agent received command: run
+2025-02-24 18:24:51 INFO Agent starting run with config:
+	Gamma: 14000
+2025-02-24 18:24:51 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=14000
+2025-02-24 18:24:56 INFO Running runs: ['lt1am70y']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:26:09 INFO Cleaning up finished run: lt1am70y
+2025-02-24 18:26:09 INFO Agent received command: run
+2025-02-24 18:26:09 INFO Agent starting run with config:
+	Gamma: 15000
+2025-02-24 18:26:09 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=15000
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:26:14 INFO Running runs: ['84w7cz8n']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:27:26 INFO Cleaning up finished run: 84w7cz8n
+2025-02-24 18:27:26 INFO Agent received command: run
+2025-02-24 18:27:26 INFO Agent starting run with config:
+	Gamma: 16000
+2025-02-24 18:27:26 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=16000
+2025-02-24 18:27:32 INFO Running runs: ['jx8c3vx6']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:28:44 INFO Cleaning up finished run: jx8c3vx6
+2025-02-24 18:28:44 INFO Agent received command: run
+2025-02-24 18:28:44 INFO Agent starting run with config:
+	Gamma: 17000
+2025-02-24 18:28:44 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=17000
+2025-02-24 18:28:49 INFO Running runs: ['mict5xd5']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:30:02 INFO Cleaning up finished run: mict5xd5
+2025-02-24 18:30:02 INFO Agent received command: run
+2025-02-24 18:30:02 INFO Agent starting run with config:
+	Gamma: 18000
+2025-02-24 18:30:02 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=18000
+2025-02-24 18:30:07 INFO Running runs: ['mcbtxemj']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:31:18 INFO Running runs: ['mnh3uwrx']
+cbtxemj
+2025-02-24 18:31:19 INFO Agent received command: run
+2025-02-24 18:31:19 INFO Agent starting run with config:
+	Gamma: 19000
+2025-02-24 18:31:19 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=19000
+2025-02-24 18:31:24 INFO Running runs: ['y0hzu1wi']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:32:37 INFO Cleaning up finished run: y0hzu1wi
+2025-02-24 18:32:37 INFO Agent received command: run
+2025-02-24 18:32:37 INFO Agent starting run with config:
+	Gamma: 20000
+2025-02-24 18:32:37 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=20000
+2025-02-24 18:32:42 INFO Running runs: ['9gdvbxpq']
+                                                                                                                                                                                                                                                                                                                                                    2025-02-24 18:33:48 INFO Running runs: ['nbn4y6f5']
+gdvbxpq
+2025-02-24 18:33:55 INFO Agent received command: exit
+2025-02-24 18:33:55 INFO Received exit command. Killing runs and quitting.
+2025-02-24 18:35:00 INFO Cleaning up finished run: nbn4y6f5
+2025-02-24 18:35:00 INFO Agent received command: run
+2025-02-24 18:35:00 INFO Agent starting run with config:
+	Gamma: 69208
+2025-02-24 18:35:00 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=69208
+2025-02-24 18:35:05 INFO Running runs: ['j04l6b04']
+2025-02-24 18:36:18 INFO Cleaning up finished run: j04l6b04
+2025-02-24 18:36:18 INFO Agent received command: run
+2025-02-24 18:36:18 INFO Agent starting run with config:
+	Gamma: 73493
+2025-02-24 18:36:18 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=73493
+2025-02-24 18:36:23 INFO Running runs: ['5i1t3ydj']
+2025-02-24 18:37:30 INFO Cleaning up finished run: 5i1t3ydj
+2025-02-24 18:37:30 INFO Agent received command: run
+2025-02-24 18:37:30 INFO Agent starting run with config:
+	Gamma: 78019
+2025-02-24 18:37:30 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=78019
+2025-02-24 18:37:35 INFO Running runs: ['4bj5fqoz']
+2025-02-24 18:38:47 INFO Cleaning up finished run: 4bj5fqoz
+2025-02-24 18:38:48 INFO Agent received command: run
+2025-02-24 18:38:48 INFO Agent starting run with config:
+	Gamma: 82798
+2025-02-24 18:38:48 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=82798
+2025-02-24 18:38:53 INFO Running runs: ['xvd74ok1']
+2025-02-24 18:40:05 INFO Cleaning up finished run: xvd74ok1
+2025-02-24 18:40:05 INFO Agent received command: run
+2025-02-24 18:40:05 INFO Agent starting run with config:
+	Gamma: 87841
+2025-02-24 18:40:05 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=87841
+2025-02-24 18:40:10 INFO Running runs: ['mtkh39er']
+2025-02-24 18:41:17 INFO Cleaning up finished run: mtkh39er
+2025-02-24 18:41:18 INFO Agent received command: run
+2025-02-24 18:41:18 INFO Agent starting run with config:
+	Gamma: 93160
+2025-02-24 18:41:18 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=93160
+2025-02-24 18:41:23 INFO Running runs: ['kiqwz8d0']
+2025-02-24 18:42:35 INFO Cleaning up finished run: kiqwz8d0
+2025-02-24 18:42:35 INFO Agent received command: run
+2025-02-24 18:42:35 INFO Agent starting run with config:
+	Gamma: 98767
+2025-02-24 18:42:35 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=98767
+2025-02-24 18:42:40 INFO Running runs: ['qvbowi5y']
+2025-02-24 18:43:52 INFO Cleaning up finished run: qvbowi5y
+2025-02-24 18:43:52 INFO Agent received command: run
+2025-02-24 18:43:52 INFO Agent starting run with config:
+	Gamma: 104676
+2025-02-24 18:43:52 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=104676
+2025-02-24 18:43:57 INFO Running runs: ['udmaq2yr']
+2025-02-24 18:45:04 INFO Cleaning up finished run: udmaq2yr
+2025-02-24 18:45:04 INFO Agent received command: run
+2025-02-24 18:45:04 INFO Agent starting run with config:
+	Gamma: 110900
+2025-02-24 18:45:04 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=110900
+2025-02-24 18:45:09 INFO Running runs: ['7eru02qw']
+2025-02-24 18:46:16 INFO Cleaning up finished run: 7eru02qw
+2025-02-24 18:46:16 INFO Agent received command: run
+2025-02-24 18:46:16 INFO Agent starting run with config:
+	Gamma: 117455
+2025-02-24 18:46:16 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=117455
+2025-02-24 18:46:21 INFO Running runs: ['o1jwoo6q']
+2025-02-24 18:47:33 INFO Cleaning up finished run: o1jwoo6q
+2025-02-24 18:47:34 INFO Agent received command: run
+2025-02-24 18:47:34 INFO Agent starting run with config:
+	Gamma: 124356
+2025-02-24 18:47:34 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=124356
+2025-02-24 18:47:39 INFO Running runs: ['s8g1ueny']
+2025-02-24 18:48:51 INFO Cleaning up finished run: s8g1ueny
+2025-02-24 18:48:51 INFO Agent received command: run
+2025-02-24 18:48:51 INFO Agent starting run with config:
+	Gamma: 131617
+2025-02-24 18:48:51 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=131617
+2025-02-24 18:48:56 INFO Running runs: ['hhlw47iv']
+2025-02-24 18:50:08 INFO Cleaning up finished run: hhlw47iv
+2025-02-24 18:50:08 INFO Agent received command: run
+2025-02-24 18:50:08 INFO Agent starting run with config:
+	Gamma: 139255
+2025-02-24 18:50:08 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=139255
+2025-02-24 18:50:13 INFO Running runs: ['77uhhbuv']
+2025-02-24 18:51:25 INFO Cleaning up finished run: 77uhhbuv
+2025-02-24 18:51:26 INFO Agent received command: run
+2025-02-24 18:51:26 INFO Agent starting run with config:
+	Gamma: 147287
+2025-02-24 18:51:26 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=147287
+2025-02-24 18:51:31 INFO Running runs: ['w50nwsca']
+2025-02-24 18:52:43 INFO Cleaning up finished run: w50nwsca
+2025-02-24 18:52:43 INFO Agent received command: run
+2025-02-24 18:52:43 INFO Agent starting run with config:
+	Gamma: 155730
+2025-02-24 18:52:43 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=155730
+2025-02-24 18:52:48 INFO Running runs: ['157xraez']
+2025-02-24 18:54:00 INFO Cleaning up finished run: 157xraez
+2025-02-24 18:54:01 INFO Agent received command: run
+2025-02-24 18:54:01 INFO Agent starting run with config:
+	Gamma: 164603
+2025-02-24 18:54:01 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=164603
+2025-02-24 18:54:06 INFO Running runs: ['0ppedp2s']
+2025-02-24 18:55:18 INFO Cleaning up finished run: 0ppedp2s
+2025-02-24 18:55:18 INFO Agent received command: run
+2025-02-24 18:55:18 INFO Agent starting run with config:
+	Gamma: 173924
+2025-02-24 18:55:18 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=173924
+2025-02-24 18:55:23 INFO Running runs: ['y95elmar']
+2025-02-24 18:56:35 INFO Cleaning up finished run: y95elmar
+2025-02-24 18:56:35 INFO Agent received command: run
+2025-02-24 18:56:35 INFO Agent starting run with config:
+	Gamma: 183714
+2025-02-24 18:56:35 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=183714
+2025-02-24 18:56:40 INFO Running runs: ['xnfdmvjb']
+2025-02-24 18:58:02 INFO Cleaning up finished run: xnfdmvjb
+2025-02-24 18:58:02 INFO Agent received command: run
+2025-02-24 18:58:02 INFO Agent starting run with config:
+	Gamma: 193992
+2025-02-24 18:58:02 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=193992
+2025-02-24 18:58:07 INFO Running runs: ['qe0uodn9']
+2025-02-24 18:59:19 INFO Cleaning up finished run: qe0uodn9
+2025-02-24 18:59:21 INFO Agent received command: run
+2025-02-24 18:59:21 INFO Agent starting run with config:
+	Gamma: 204780
+2025-02-24 18:59:21 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=204780
+2025-02-24 18:59:26 INFO Running runs: ['gux1ydco']
+2025-02-24 19:00:32 INFO Cleaning up finished run: gux1ydco
+2025-02-24 19:00:33 INFO Agent received command: run
+2025-02-24 19:00:33 INFO Agent starting run with config:
+	Gamma: 216101
+2025-02-24 19:00:33 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=216101
+2025-02-24 19:00:38 INFO Running runs: ['dxm2b3ck']
+2025-02-24 19:01:50 INFO Cleaning up finished run: dxm2b3ck
+2025-02-24 19:01:50 INFO Agent received command: run
+2025-02-24 19:01:50 INFO Agent starting run with config:
+	Gamma: 227978
+2025-02-24 19:01:50 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=227978
+2025-02-24 19:01:55 INFO Running runs: ['727q4jo8']
+2025-02-24 19:03:07 INFO Cleaning up finished run: 727q4jo8
+2025-02-24 19:03:08 INFO Agent received command: run
+2025-02-24 19:03:08 INFO Agent starting run with config:
+	Gamma: 240437
+2025-02-24 19:03:08 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=240437
+2025-02-24 19:03:13 INFO Running runs: ['j1sl9o1h']
+2025-02-24 19:04:25 INFO Cleaning up finished run: j1sl9o1h
+2025-02-24 19:04:25 INFO Agent received command: run
+2025-02-24 19:04:25 INFO Agent starting run with config:
+	Gamma: 253505
+2025-02-24 19:04:25 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=253505
+2025-02-24 19:04:30 INFO Running runs: ['sz8h165k']
+2025-02-24 19:05:42 INFO Cleaning up finished run: sz8h165k
+2025-02-24 19:05:43 INFO Agent received command: run
+2025-02-24 19:05:43 INFO Agent starting run with config:
+	Gamma: 267208
+2025-02-24 19:05:43 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=267208
+2025-02-24 19:05:48 INFO Running runs: ['i43w1xxj']
+2025-02-24 19:07:00 INFO Cleaning up finished run: i43w1xxj
+2025-02-24 19:07:00 INFO Agent received command: run
+2025-02-24 19:07:00 INFO Agent starting run with config:
+	Gamma: 281574
+2025-02-24 19:07:00 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=281574
+2025-02-24 19:07:05 INFO Running runs: ['a61j7y8p']
+2025-02-24 19:08:18 INFO Cleaning up finished run: a61j7y8p
+2025-02-24 19:08:18 INFO Agent received command: run
+2025-02-24 19:08:18 INFO Agent starting run with config:
+	Gamma: 296631
+2025-02-24 19:08:18 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=296631
+2025-02-24 19:08:23 INFO Running runs: ['81anbp0x']
+2025-02-24 19:09:35 INFO Cleaning up finished run: 81anbp0x
+2025-02-24 19:09:35 INFO Agent received command: run
+2025-02-24 19:09:35 INFO Agent starting run with config:
+	Gamma: 312408
+2025-02-24 19:09:35 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=312408
+2025-02-24 19:09:40 INFO Running runs: ['jw567a82']
+2025-02-24 19:10:53 INFO Cleaning up finished run: jw567a82
+2025-02-24 19:10:53 INFO Agent received command: run
+2025-02-24 19:10:53 INFO Agent starting run with config:
+	Gamma: 328938
+2025-02-24 19:10:53 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=328938
+2025-02-24 19:10:58 INFO Running runs: ['1kayxd5m']
+2025-02-24 19:12:10 INFO Cleaning up finished run: 1kayxd5m
+2025-02-24 19:12:10 INFO Agent received command: run
+2025-02-24 19:12:10 INFO Agent starting run with config:
+	Gamma: 346252
+2025-02-24 19:12:10 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=346252
+2025-02-24 19:12:15 INFO Running runs: ['bv7q41pr']
+2025-02-24 19:13:27 INFO Cleaning up finished run: bv7q41pr
+2025-02-24 19:13:28 INFO Agent received command: run
+2025-02-24 19:13:28 INFO Agent starting run with config:
+	Gamma: 364382
+2025-02-24 19:13:28 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=364382
+2025-02-24 19:13:33 INFO Running runs: ['mcoexvkc']
+2025-02-24 19:14:45 INFO Cleaning up finished run: mcoexvkc
+2025-02-24 19:14:45 INFO Agent received command: run
+2025-02-24 19:14:45 INFO Agent starting run with config:
+	Gamma: 383361
+2025-02-24 19:14:45 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=383361
+2025-02-24 19:14:50 INFO Running runs: ['lv8p7e26']
+2025-02-24 19:16:02 INFO Cleaning up finished run: lv8p7e26
+2025-02-24 19:16:03 INFO Agent received command: run
+2025-02-24 19:16:03 INFO Agent starting run with config:
+	Gamma: 403225
+2025-02-24 19:16:03 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=403225
+2025-02-24 19:16:08 INFO Running runs: ['9ela8dvf']
+2025-02-24 19:17:20 INFO Cleaning up finished run: 9ela8dvf
+2025-02-24 19:17:20 INFO Agent received command: run
+2025-02-24 19:17:20 INFO Agent starting run with config:
+	Gamma: 424008
+2025-02-24 19:17:20 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=424008
+2025-02-24 19:17:25 INFO Running runs: ['bmnvzf6y']
+2025-02-24 19:18:34 INFO Cleaning up finished run: bmnvzf6y
+2025-02-24 19:18:34 INFO Agent received command: run
+2025-02-24 19:18:34 INFO Agent starting run with config:
+	Gamma: 445747
+2025-02-24 19:18:34 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=445747
+2025-02-24 19:18:39 INFO Running runs: ['drr0z457']
+2025-02-24 19:19:46 INFO Cleaning up finished run: drr0z457
+2025-02-24 19:19:46 INFO Agent received command: run
+2025-02-24 19:19:46 INFO Agent starting run with config:
+	Gamma: 468480
+2025-02-24 19:19:46 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=468480
+2025-02-24 19:19:51 INFO Running runs: ['dpqdryl5']
+2025-02-24 19:21:04 INFO Cleaning up finished run: dpqdryl5
+2025-02-24 19:21:04 INFO Agent received command: run
+2025-02-24 19:21:04 INFO Agent starting run with config:
+	Gamma: 492245
+2025-02-24 19:21:04 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=492245
+2025-02-24 19:21:09 INFO Running runs: ['q60b4k1a']
+2025-02-24 19:22:21 INFO Cleaning up finished run: q60b4k1a
+2025-02-24 19:22:22 INFO Agent received command: run
+2025-02-24 19:22:22 INFO Agent starting run with config:
+	Gamma: 517081
+2025-02-24 19:22:22 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=517081
+2025-02-24 19:22:27 INFO Running runs: ['thd635hd']
+2025-02-24 19:23:39 INFO Cleaning up finished run: thd635hd
+2025-02-24 19:23:39 INFO Agent received command: run
+2025-02-24 19:23:39 INFO Agent starting run with config:
+	Gamma: 543028
+2025-02-24 19:23:39 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=543028
+2025-02-24 19:23:44 INFO Running runs: ['08r0ytke']
+2025-02-24 19:24:56 INFO Cleaning up finished run: 08r0ytke
+2025-02-24 19:24:56 INFO Agent received command: run
+2025-02-24 19:24:56 INFO Agent starting run with config:
+	Gamma: 570128
+2025-02-24 19:24:56 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=570128
+2025-02-24 19:25:01 INFO Running runs: ['9xq7g0s5']
+2025-02-24 19:26:14 INFO Cleaning up finished run: 9xq7g0s5
+2025-02-24 19:26:14 INFO Agent received command: run
+2025-02-24 19:26:14 INFO Agent starting run with config:
+	Gamma: 598423
+2025-02-24 19:26:14 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=598423
+2025-02-24 19:26:19 INFO Running runs: ['m0gtpep3']
+2025-02-24 19:27:31 INFO Cleaning up finished run: m0gtpep3
+2025-02-24 19:27:32 INFO Agent received command: run
+2025-02-24 19:27:32 INFO Agent starting run with config:
+	Gamma: 627956
+2025-02-24 19:27:32 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=627956
+2025-02-24 19:27:37 INFO Running runs: ['68nkvq79']
+2025-02-24 19:28:45 INFO Cleaning up finished run: 68nkvq79
+2025-02-24 19:28:45 INFO Agent received command: run
+2025-02-24 19:28:45 INFO Agent starting run with config:
+	Gamma: 658774
+2025-02-24 19:28:45 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=658774
+2025-02-24 19:28:50 INFO Running runs: ['jfq7y3fc']
+2025-02-24 19:30:03 INFO Cleaning up finished run: jfq7y3fc
+2025-02-24 19:30:03 INFO Agent received command: run
+2025-02-24 19:30:03 INFO Agent starting run with config:
+	Gamma: 690923
+2025-02-24 19:30:03 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=690923
+2025-02-24 19:30:08 INFO Running runs: ['z9mwe2vh']
+2025-02-24 19:31:20 INFO Cleaning up finished run: z9mwe2vh
+2025-02-24 19:31:21 INFO Agent received command: run
+2025-02-24 19:31:21 INFO Agent starting run with config:
+	Gamma: 724452
+2025-02-24 19:31:21 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=724452
+2025-02-24 19:31:26 INFO Running runs: ['wjde49js']
+2025-02-24 19:32:38 INFO Cleaning up finished run: wjde49js
+2025-02-24 19:32:38 INFO Agent received command: run
+2025-02-24 19:32:38 INFO Agent starting run with config:
+	Gamma: 759409
+2025-02-24 19:32:38 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=759409
+2025-02-24 19:32:43 INFO Running runs: ['nm57odaa']
+2025-02-24 19:33:55 INFO Cleaning up finished run: nm57odaa
+2025-02-24 19:33:55 INFO Agent received command: run
+2025-02-24 19:33:55 INFO Agent starting run with config:
+	Gamma: 795845
+2025-02-24 19:33:55 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=795845
+2025-02-24 19:34:00 INFO Running runs: ['duawy0ho']
+2025-02-24 19:35:07 INFO Cleaning up finished run: duawy0ho
+2025-02-24 19:35:07 INFO Agent received command: run
+2025-02-24 19:35:07 INFO Agent starting run with config:
+	Gamma: 833812
+2025-02-24 19:35:07 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=833812
+2025-02-24 19:35:12 INFO Running runs: ['ezfg7jau']
+2025-02-24 19:36:25 INFO Cleaning up finished run: ezfg7jau
+2025-02-24 19:36:25 INFO Agent received command: run
+2025-02-24 19:36:25 INFO Agent starting run with config:
+	Gamma: 873366
+2025-02-24 19:36:25 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=873366
+2025-02-24 19:36:30 INFO Running runs: ['ysvw73ow']
+2025-02-24 19:37:42 INFO Cleaning up finished run: ysvw73ow
+2025-02-24 19:37:42 INFO Agent received command: run
+2025-02-24 19:37:42 INFO Agent starting run with config:
+	Gamma: 914561
+2025-02-24 19:37:42 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=914561
+2025-02-24 19:37:47 INFO Running runs: ['avwgo70d']
+2025-02-24 19:39:00 INFO Cleaning up finished run: avwgo70d
+2025-02-24 19:39:00 INFO Agent received command: run
+2025-02-24 19:39:00 INFO Agent starting run with config:
+	Gamma: 957456
+2025-02-24 19:39:00 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=957456
+2025-02-24 19:39:05 INFO Running runs: ['lwv8hah0']
+2025-02-24 19:40:17 INFO Cleaning up finished run: lwv8hah0
+2025-02-24 19:40:17 INFO Agent received command: run
+2025-02-24 19:40:17 INFO Agent starting run with config:
+	Gamma: 1002111
+2025-02-24 19:40:17 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1002111
+2025-02-24 19:40:22 INFO Running runs: ['lybfyrii']
+2025-02-24 19:41:35 INFO Cleaning up finished run: lybfyrii
+2025-02-24 19:41:35 INFO Agent received command: run
+2025-02-24 19:41:35 INFO Agent starting run with config:
+	Gamma: 1048649
+2025-02-24 19:41:35 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1048649
+2025-02-24 19:41:40 INFO Running runs: ['m3ric5h7']
+2025-02-24 19:42:53 INFO Cleaning up finished run: m3ric5h7
+2025-02-24 19:42:53 INFO Agent received command: run
+2025-02-24 19:42:53 INFO Agent starting run with config:
+	Gamma: 1097067
+2025-02-24 19:42:53 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1097067
+2025-02-24 19:42:58 INFO Running runs: ['96rpsejn']
+2025-02-24 19:44:05 INFO Cleaning up finished run: 96rpsejn
+2025-02-24 19:44:05 INFO Agent received command: run
+2025-02-24 19:44:05 INFO Agent starting run with config:
+	Gamma: 1147425
+2025-02-24 19:44:05 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1147425
+2025-02-24 19:44:11 INFO Running runs: ['zars13y5']
+2025-02-24 19:45:23 INFO Cleaning up finished run: zars13y5
+2025-02-24 19:45:23 INFO Agent received command: run
+2025-02-24 19:45:23 INFO Agent starting run with config:
+	Gamma: 1199783
+2025-02-24 19:45:23 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1199783
+2025-02-24 19:45:28 INFO Running runs: ['n0e5qym6']
+2025-02-24 19:46:40 INFO Cleaning up finished run: n0e5qym6
+2025-02-24 19:46:40 INFO Agent received command: run
+2025-02-24 19:46:40 INFO Agent starting run with config:
+	Gamma: 1254204
+2025-02-24 19:46:40 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1254204
+2025-02-24 19:46:45 INFO Running runs: ['yoy9svty']
+2025-02-24 19:47:58 INFO Cleaning up finished run: yoy9svty
+2025-02-24 19:47:58 INFO Agent received command: run
+2025-02-24 19:47:58 INFO Agent starting run with config:
+	Gamma: 1310754
+2025-02-24 19:47:58 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1310754
+2025-02-24 19:48:03 INFO Running runs: ['p46e5ov8']
+2025-02-24 19:49:15 INFO Cleaning up finished run: p46e5ov8
+2025-02-24 19:49:16 INFO Agent received command: run
+2025-02-24 19:49:16 INFO Agent starting run with config:
+	Gamma: 1369498
+2025-02-24 19:49:16 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1369498
+2025-02-24 19:49:21 INFO Running runs: ['180nkaqk']
+2025-02-24 19:50:33 INFO Cleaning up finished run: 180nkaqk
+2025-02-24 19:50:33 INFO Agent received command: run
+2025-02-24 19:50:33 INFO Agent starting run with config:
+	Gamma: 1430505
+2025-02-24 19:50:33 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1430505
+2025-02-24 19:50:38 INFO Running runs: ['sq2f8wlz']
+2025-02-24 19:51:50 INFO Cleaning up finished run: sq2f8wlz
+2025-02-24 19:51:51 INFO Agent received command: run
+2025-02-24 19:51:51 INFO Agent starting run with config:
+	Gamma: 1493847
+2025-02-24 19:51:51 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1493847
+2025-02-24 19:51:56 INFO Running runs: ['4jh1daos']
+2025-02-24 19:53:02 INFO Cleaning up finished run: 4jh1daos
+2025-02-24 19:53:03 INFO Agent received command: run
+2025-02-24 19:53:03 INFO Agent starting run with config:
+	Gamma: 1559599
+2025-02-24 19:53:03 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1559599
+2025-02-24 19:53:08 INFO Running runs: ['4vhc4fbh']
+2025-02-24 19:54:20 INFO Cleaning up finished run: 4vhc4fbh
+2025-02-24 19:54:20 INFO Agent received command: run
+2025-02-24 19:54:20 INFO Agent starting run with config:
+	Gamma: 1627837
+2025-02-24 19:54:20 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1627837
+2025-02-24 19:54:25 INFO Running runs: ['8zr30h2h']
+2025-02-24 19:55:37 INFO Cleaning up finished run: 8zr30h2h
+2025-02-24 19:55:38 INFO Agent received command: run
+2025-02-24 19:55:38 INFO Agent starting run with config:
+	Gamma: 1698641
+2025-02-24 19:55:38 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1698641
+2025-02-24 19:55:43 INFO Running runs: ['gax0d36o']
+2025-02-24 19:56:55 INFO Cleaning up finished run: gax0d36o
+2025-02-24 19:56:55 INFO Agent received command: run
+2025-02-24 19:56:55 INFO Agent starting run with config:
+	Gamma: 1772093
+2025-02-24 19:56:55 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1772093
+2025-02-24 19:57:00 INFO Running runs: ['fe3ujrvw']
+2025-02-24 19:58:12 INFO Cleaning up finished run: fe3ujrvw
+2025-02-24 19:58:13 INFO Agent received command: run
+2025-02-24 19:58:13 INFO Agent starting run with config:
+	Gamma: 1848277
+2025-02-24 19:58:13 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1848277
+2025-02-24 19:58:18 INFO Running runs: ['fhvh9s61']
+2025-02-24 19:59:30 INFO Cleaning up finished run: fhvh9s61
+2025-02-24 19:59:30 INFO Agent received command: run
+2025-02-24 19:59:30 INFO Agent starting run with config:
+	Gamma: 1927278
+2025-02-24 19:59:30 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=1927278
+2025-02-24 19:59:35 INFO Running runs: ['320deg41']
+2025-02-24 20:00:47 INFO Cleaning up finished run: 320deg41
+2025-02-24 20:00:48 INFO Agent received command: run
+2025-02-24 20:00:48 INFO Agent starting run with config:
+	Gamma: 2009187
+2025-02-24 20:00:48 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=2009187
+2025-02-24 20:00:53 INFO Running runs: ['ivr3u1fr']
+2025-02-24 20:02:01 INFO Cleaning up finished run: ivr3u1fr
+2025-02-24 20:02:02 INFO Agent received command: run
+2025-02-24 20:02:02 INFO Agent starting run with config:
+	Gamma: 2094093
+2025-02-24 20:02:02 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=2094093
+2025-02-24 20:02:07 INFO Running runs: ['br36p6an']
+2025-02-24 20:03:19 INFO Cleaning up finished run: br36p6an
+2025-02-24 20:03:19 INFO Agent received command: run
+2025-02-24 20:03:19 INFO Agent starting run with config:
+	Gamma: 2182086
+2025-02-24 20:03:19 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=2182086
+2025-02-24 20:03:24 INFO Running runs: ['h6qf1ssk']
+2025-02-24 20:04:36 INFO Cleaning up finished run: h6qf1ssk
+2025-02-24 20:04:37 INFO Agent received command: run
+2025-02-24 20:04:37 INFO Agent starting run with config:
+	Gamma: 2273259
+2025-02-24 20:04:37 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=2273259
+2025-02-24 20:04:42 INFO Running runs: ['l2owtwrn']
+2025-02-24 20:06:55 INFO Cleaning up finished run: l2owtwrn
+2025-02-24 20:06:55 INFO Agent received command: run
+2025-02-24 20:06:55 INFO Agent starting run with config:
+	Gamma: 2367707
+2025-02-24 20:06:55 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=2367707
+2025-02-24 20:07:00 INFO Running runs: ['tmyvlko3']
+2025-02-24 20:08:23 INFO Cleaning up finished run: tmyvlko3
+2025-02-24 20:08:23 INFO Agent received command: run
+2025-02-24 20:08:23 INFO Agent starting run with config:
+	Gamma: 2465533
+2025-02-24 20:08:23 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=2465533
+2025-02-24 20:08:28 INFO Running runs: ['aozezi3l']
+2025-02-24 20:09:40 INFO Cleaning up finished run: aozezi3l
+2025-02-24 20:09:40 INFO Agent received command: run
+2025-02-24 20:09:40 INFO Agent starting run with config:
+	Gamma: 2566843
+2025-02-24 20:09:40 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=2566843
+2025-02-24 20:09:45 INFO Running runs: ['hbuwi8tz']
+2025-02-24 20:10:57 INFO Cleaning up finished run: hbuwi8tz
+2025-02-24 20:10:57 INFO Agent received command: run
+2025-02-24 20:10:57 INFO Agent starting run with config:
+	Gamma: 2671746
+2025-02-24 20:10:57 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=2671746
+2025-02-24 20:11:02 INFO Running runs: ['av2qa7lw']
+2025-02-24 20:12:15 INFO Cleaning up finished run: av2qa7lw
+2025-02-24 20:12:15 INFO Agent received command: run
+2025-02-24 20:12:15 INFO Agent starting run with config:
+	Gamma: 2780355
+2025-02-24 20:12:15 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=2780355
+2025-02-24 20:12:20 INFO Running runs: ['pkwbaobv']
+2025-02-24 20:13:32 INFO Cleaning up finished run: pkwbaobv
+2025-02-24 20:13:32 INFO Agent received command: run
+2025-02-24 20:13:32 INFO Agent starting run with config:
+	Gamma: 2892786
+2025-02-24 20:13:32 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=2892786
+2025-02-24 20:13:37 INFO Running runs: ['qngnclhs']
+2025-02-24 20:14:50 INFO Cleaning up finished run: qngnclhs
+2025-02-24 20:14:50 INFO Agent received command: run
+2025-02-24 20:14:50 INFO Agent starting run with config:
+	Gamma: 3009159
+2025-02-24 20:14:50 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=3009159
+2025-02-24 20:14:55 INFO Running runs: ['vki9lzcu']
+2025-02-24 20:16:02 INFO Cleaning up finished run: vki9lzcu
+2025-02-24 20:16:02 INFO Agent received command: run
+2025-02-24 20:16:02 INFO Agent starting run with config:
+	Gamma: 3129599
+2025-02-24 20:16:02 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=3129599
+2025-02-24 20:16:07 INFO Running runs: ['s3wg78nb']
+2025-02-24 20:17:14 INFO Cleaning up finished run: s3wg78nb
+2025-02-24 20:17:14 INFO Agent received command: run
+2025-02-24 20:17:14 INFO Agent starting run with config:
+	Gamma: 3254233
+2025-02-24 20:17:14 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=3254233
+2025-02-24 20:17:19 INFO Running runs: ['g9i9htz9']
+2025-02-24 20:18:32 INFO Cleaning up finished run: g9i9htz9
+2025-02-24 20:18:32 INFO Agent received command: run
+2025-02-24 20:18:32 INFO Agent starting run with config:
+	Gamma: 3383193
+2025-02-24 20:18:32 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=3383193
+2025-02-24 20:18:37 INFO Running runs: ['1gnq08ia']
+2025-02-24 20:19:49 INFO Cleaning up finished run: 1gnq08ia
+2025-02-24 20:19:50 INFO Agent received command: run
+2025-02-24 20:19:50 INFO Agent starting run with config:
+	Gamma: 3516614
+2025-02-24 20:19:50 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=3516614
+2025-02-24 20:19:55 INFO Running runs: ['5tnjwwvd']
+2025-02-24 20:21:07 INFO Cleaning up finished run: 5tnjwwvd
+2025-02-24 20:21:07 INFO Agent received command: run
+2025-02-24 20:21:07 INFO Agent starting run with config:
+	Gamma: 3654637
+2025-02-24 20:21:07 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=3654637
+2025-02-24 20:21:12 INFO Running runs: ['9imo0814']
+2025-02-24 20:22:24 INFO Cleaning up finished run: 9imo0814
+2025-02-24 20:22:25 INFO Agent received command: run
+2025-02-24 20:22:25 INFO Agent starting run with config:
+	Gamma: 3797405
+2025-02-24 20:22:25 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=3797405
+2025-02-24 20:22:30 INFO Running runs: ['tlev5v6n']
+2025-02-24 20:23:36 INFO Cleaning up finished run: tlev5v6n
+2025-02-24 20:23:37 INFO Agent received command: run
+2025-02-24 20:23:37 INFO Agent starting run with config:
+	Gamma: 3945066
+2025-02-24 20:23:37 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=3945066
+2025-02-24 20:23:42 INFO Running runs: ['e181pudq']
+2025-02-24 20:24:54 INFO Cleaning up finished run: e181pudq
+2025-02-24 20:24:54 INFO Agent received command: run
+2025-02-24 20:24:54 INFO Agent starting run with config:
+	Gamma: 4097771
+2025-02-24 20:24:54 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=4097771
+2025-02-24 20:24:59 INFO Running runs: ['rq79x644']
+2025-02-24 20:26:11 INFO Cleaning up finished run: rq79x644
+2025-02-24 20:26:11 INFO Agent received command: run
+2025-02-24 20:26:11 INFO Agent starting run with config:
+	Gamma: 4255676
+2025-02-24 20:26:11 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=4255676
+2025-02-24 20:26:17 INFO Running runs: ['kmvi3stl']
+2025-02-24 20:27:29 INFO Cleaning up finished run: kmvi3stl
+2025-02-24 20:27:29 INFO Agent received command: run
+2025-02-24 20:27:29 INFO Agent starting run with config:
+	Gamma: 4418940
+2025-02-24 20:27:29 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=4418940
+2025-02-24 20:27:34 INFO Running runs: ['5qp3d09y']
+2025-02-24 20:28:46 INFO Cleaning up finished run: 5qp3d09y
+2025-02-24 20:28:46 INFO Agent received command: run
+2025-02-24 20:28:46 INFO Agent starting run with config:
+	Gamma: 4587727
+2025-02-24 20:28:46 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=4587727
+2025-02-24 20:28:51 INFO Running runs: ['fuqeucu0']
+2025-02-24 20:30:03 INFO Cleaning up finished run: fuqeucu0
+2025-02-24 20:30:04 INFO Agent received command: run
+2025-02-24 20:30:04 INFO Agent starting run with config:
+	Gamma: 4762207
+2025-02-24 20:30:04 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=4762207
+2025-02-24 20:30:09 INFO Running runs: ['oj8zj7gf']
+2025-02-24 20:31:21 INFO Cleaning up finished run: oj8zj7gf
+2025-02-24 20:31:22 INFO Agent received command: run
+2025-02-24 20:31:22 INFO Agent starting run with config:
+	Gamma: 4942559
+2025-02-24 20:31:22 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=4942559
+2025-02-24 20:31:27 INFO Running runs: ['nkcuthvs']
+2025-02-24 20:32:39 INFO Cleaning up finished run: nkcuthvs
+2025-02-24 20:32:39 INFO Agent received command: run
+2025-02-24 20:32:39 INFO Agent starting run with config:
+	Gamma: 5128962
+2025-02-24 20:32:39 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=5128962
+2025-02-24 20:32:44 INFO Running runs: ['3n2hznjl']
+2025-02-24 20:33:56 INFO Cleaning up finished run: 3n2hznjl
+2025-02-24 20:33:56 INFO Agent received command: run
+2025-02-24 20:33:56 INFO Agent starting run with config:
+	Gamma: 5321605
+2025-02-24 20:33:56 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=5321605
+2025-02-24 20:34:01 INFO Running runs: ['1wm11c6g']
+2025-02-24 20:35:14 INFO Cleaning up finished run: 1wm11c6g
+2025-02-24 20:35:14 INFO Agent received command: run
+2025-02-24 20:35:14 INFO Agent starting run with config:
+	Gamma: 5520687
+2025-02-24 20:35:14 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=5520687
+2025-02-24 20:35:19 INFO Running runs: ['xd1i3ryi']
+2025-02-24 20:36:32 INFO Cleaning up finished run: xd1i3ryi
+2025-02-24 20:36:32 INFO Agent received command: run
+2025-02-24 20:36:32 INFO Agent starting run with config:
+	Gamma: 5726419
+2025-02-24 20:36:32 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=5726419
+2025-02-24 20:36:37 INFO Running runs: ['gwjzb33v']
+2025-02-24 20:37:44 INFO Cleaning up finished run: gwjzb33v
+2025-02-24 20:37:44 INFO Agent received command: run
+2025-02-24 20:37:44 INFO Agent starting run with config:
+	Gamma: 5939020
+2025-02-24 20:37:44 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=5939020
+2025-02-24 20:37:49 INFO Running runs: ['gp63ejgx']
+2025-02-24 20:39:01 INFO Cleaning up finished run: gp63ejgx
+2025-02-24 20:39:02 INFO Agent received command: run
+2025-02-24 20:39:02 INFO Agent starting run with config:
+	Gamma: 6158722
+2025-02-24 20:39:02 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=6158722
+2025-02-24 20:39:07 INFO Running runs: ['adun2g9g']
+2025-02-24 20:40:19 INFO Cleaning up finished run: adun2g9g
+2025-02-24 20:40:19 INFO Agent received command: run
+2025-02-24 20:40:19 INFO Agent starting run with config:
+	Gamma: 6385760
+2025-02-24 20:40:19 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=6385760
+2025-02-24 20:40:24 INFO Running runs: ['ye287whl']
+2025-02-24 20:41:36 INFO Cleaning up finished run: ye287whl
+2025-02-24 20:41:36 INFO Agent received command: run
+2025-02-24 20:41:36 INFO Agent starting run with config:
+	Gamma: 6620385
+2025-02-24 20:41:36 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=6620385
+2025-02-24 20:41:41 INFO Running runs: ['uci9vfau']
+2025-02-24 20:42:53 INFO Cleaning up finished run: uci9vfau
+2025-02-24 20:42:53 INFO Agent received command: run
+2025-02-24 20:42:53 INFO Agent starting run with config:
+	Gamma: 6862854
+2025-02-24 20:42:53 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=6862854
+2025-02-24 20:42:58 INFO Running runs: ['j34fdziy']
+2025-02-24 20:44:10 INFO Cleaning up finished run: j34fdziy
+2025-02-24 20:44:11 INFO Agent received command: run
+2025-02-24 20:44:11 INFO Agent starting run with config:
+	Gamma: 7113433
+2025-02-24 20:44:11 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=7113433
+2025-02-24 20:44:16 INFO Running runs: ['txg4xh5p']
+2025-02-24 20:45:28 INFO Cleaning up finished run: txg4xh5p
+2025-02-24 20:45:28 INFO Agent received command: run
+2025-02-24 20:45:28 INFO Agent starting run with config:
+	Gamma: 7372395
+2025-02-24 20:45:28 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=7372395
+2025-02-24 20:45:33 INFO Running runs: ['pa58meoa']
+2025-02-24 20:46:45 INFO Cleaning up finished run: pa58meoa
+2025-02-24 20:46:46 INFO Agent received command: run
+2025-02-24 20:46:46 INFO Agent starting run with config:
+	Gamma: 7639021
+2025-02-24 20:46:46 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=7639021
+2025-02-24 20:46:51 INFO Running runs: ['4rz72dn7']
+2025-02-24 20:47:57 INFO Cleaning up finished run: 4rz72dn7
+2025-02-24 20:47:58 INFO Agent received command: run
+2025-02-24 20:47:58 INFO Agent starting run with config:
+	Gamma: 7913596
+2025-02-24 20:47:58 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=7913596
+2025-02-24 20:48:03 INFO Running runs: ['g49j4g2c']
+2025-02-24 20:49:15 INFO Cleaning up finished run: g49j4g2c
+2025-02-24 20:49:15 INFO Agent received command: run
+2025-02-24 20:49:15 INFO Agent starting run with config:
+	Gamma: 8196410
+2025-02-24 20:49:15 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=8196410
+2025-02-24 20:49:20 INFO Running runs: ['xvi6l3rs']
+2025-02-24 20:50:27 INFO Cleaning up finished run: xvi6l3rs
+2025-02-24 20:50:27 INFO Agent received command: run
+2025-02-24 20:50:27 INFO Agent starting run with config:
+	Gamma: 8487763
+2025-02-24 20:50:27 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=8487763
+2025-02-24 20:50:32 INFO Running runs: ['hvu7xlax']
+2025-02-24 20:51:44 INFO Cleaning up finished run: hvu7xlax
+2025-02-24 20:51:45 INFO Agent received command: run
+2025-02-24 20:51:45 INFO Agent starting run with config:
+	Gamma: 8787957
+2025-02-24 20:51:45 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=8787957
+2025-02-24 20:51:50 INFO Running runs: ['itilc6br']
+2025-02-24 20:53:02 INFO Cleaning up finished run: itilc6br
+2025-02-24 20:53:02 INFO Agent received command: run
+2025-02-24 20:53:02 INFO Agent starting run with config:
+	Gamma: 9097308
+2025-02-24 20:53:02 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=9097308
+2025-02-24 20:53:07 INFO Running runs: ['4awoltz6']
+2025-02-24 20:54:14 INFO Cleaning up finished run: 4awoltz6
+2025-02-24 20:54:14 INFO Agent received command: run
+2025-02-24 20:54:14 INFO Agent starting run with config:
+	Gamma: 9416136
+2025-02-24 20:54:14 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=9416136
+2025-02-24 20:54:19 INFO Running runs: ['7tx7voxj']
+2025-02-24 20:55:31 INFO Cleaning up finished run: 7tx7voxj
+2025-02-24 20:55:31 INFO Agent received command: run
+2025-02-24 20:55:31 INFO Agent starting run with config:
+	Gamma: 9744770
+2025-02-24 20:55:31 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=9744770
+2025-02-24 20:55:36 INFO Running runs: ['jlower7n']
+2025-02-24 20:56:49 INFO Cleaning up finished run: jlower7n
+2025-02-24 20:56:49 INFO Agent received command: run
+2025-02-24 20:56:49 INFO Agent starting run with config:
+	Gamma: 10083544
+2025-02-24 20:56:49 INFO About to run command: /usr/bin/env python /share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py --Gamma=10083544
+2025-02-24 20:56:54 INFO Running runs: ['zlodgvmb']
+2025-02-24 20:58:06 INFO Cleaning up finished run: zlodgvmb
+2025-02-24 20:58:06 INFO Agent received command: exit
+2025-02-24 20:58:06 INFO Received exit command. Killing runs and quitting.
