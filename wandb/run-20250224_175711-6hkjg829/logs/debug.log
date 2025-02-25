@@ -1,0 +1,30 @@
+2025-02-24 17:57:11,962 INFO    MainThread:345366 [wandb_setup.py:_flush():79] Current SDK version is 0.18.5
+2025-02-24 17:57:11,962 INFO    MainThread:345366 [wandb_setup.py:_flush():79] Configure stats pid to 345366
+2025-02-24 17:57:11,962 INFO    MainThread:345366 [wandb_setup.py:_flush():79] Loading settings from /home/amahmoud/.config/wandb/settings
+2025-02-24 17:57:11,962 INFO    MainThread:345366 [wandb_setup.py:_flush():79] Loading settings from /share/nas2_3/amahmoud/week5/sem2work/wandb/settings
+2025-02-24 17:57:11,962 WARNING MainThread:345366 [wandb_setup.py:_flush():79] Unknown environment variable: WANDB_DATA_DIR
+2025-02-24 17:57:11,962 WARNING MainThread:345366 [wandb_setup.py:_flush():79] Unknown environment variable: WANDB_CACHE_DIR
+2025-02-24 17:57:11,962 INFO    MainThread:345366 [wandb_setup.py:_flush():79] Loading settings from environment variables: {'project': 'Standard AE', 'entity': 'eazo-ahmad-abdelhakam-the-university-of-manchester', 'api_key': '***REDACTED***', '_require_legacy_service': 'true', 'sweep_id': '7rkrxt2p', 'root_dir': '/share/nas2_3/amahmoud/week5/sem2work', 'run_id': '6hkjg829', 'sweep_param_path': '/share/nas2_3/amahmoud/week5/sem2work/wandb/sweep-7rkrxt2p/config-6hkjg829.yaml'}
+2025-02-24 17:57:11,963 INFO    MainThread:345366 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'artificial_noisy_main_autoencoder.py', 'program_abspath': '/share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py', 'program': '/share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py'}
+2025-02-24 17:57:11,963 INFO    MainThread:345366 [wandb_setup.py:_flush():79] Applying login settings: {'api_key': '***REDACTED***'}
+2025-02-24 17:57:11,963 INFO    MainThread:345366 [wandb_setup.py:_flush():79] Applying login settings: {'api_key': '***REDACTED***'}
+2025-02-24 17:57:11,963 INFO    MainThread:345366 [wandb_setup.py:_flush():79] Applying login settings: {}
+2025-02-24 17:57:11,963 INFO    MainThread:345366 [wandb_init.py:_log_setup():534] Logging user logs to /share/nas2_3/amahmoud/week5/sem2work/wandb/run-20250224_175711-6hkjg829/logs/debug.log
+2025-02-24 17:57:11,963 INFO    MainThread:345366 [wandb_init.py:_log_setup():535] Logging internal logs to /share/nas2_3/amahmoud/week5/sem2work/wandb/run-20250224_175711-6hkjg829/logs/debug-internal.log
+2025-02-24 17:57:11,963 INFO    MainThread:345366 [wandb_init.py:init():621] calling init triggers
+2025-02-24 17:57:11,963 INFO    MainThread:345366 [wandb_init.py:init():628] wandb.init called with sweep_config: {'Gamma': 10000000}
+config: {'Gamma (KL hyperparameter)': 10000, 'embedding_dim': 64, 'num_embeddings': 256, 'architecture': 'AE', 'dataset': 'CIFAR-10', 'num_training_updates': 250000, 'learning_rate': 0.0002}
+2025-02-24 17:57:11,963 INFO    MainThread:345366 [wandb_init.py:init():671] starting backend
+2025-02-24 17:57:11,963 INFO    MainThread:345366 [wandb_init.py:init():675] sending inform_init request
+2025-02-24 17:57:11,972 INFO    MainThread:345366 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-02-24 17:57:11,972 INFO    MainThread:345366 [wandb_init.py:init():688] backend started and connected
+2025-02-24 17:57:11,987 INFO    MainThread:345366 [wandb_run.py:_config_callback():1390] config_cb None None {'Gamma': 10000000}
+2025-02-24 17:57:11,989 INFO    MainThread:345366 [wandb_init.py:init():783] updated telemetry
+2025-02-24 17:57:12,016 INFO    MainThread:345366 [wandb_init.py:init():816] communicating run to backend with 90.0 second timeout
+2025-02-24 17:57:12,351 INFO    MainThread:345366 [wandb_init.py:init():867] starting run threads in backend
+2025-02-24 17:57:12,487 INFO    MainThread:345366 [wandb_run.py:_console_start():2463] atexit reg
+2025-02-24 17:57:12,487 INFO    MainThread:345366 [wandb_run.py:_redirect():2311] redirect: wrap_raw
+2025-02-24 17:57:12,488 INFO    MainThread:345366 [wandb_run.py:_redirect():2376] Wrapping output streams.
+2025-02-24 17:57:12,488 INFO    MainThread:345366 [wandb_run.py:_redirect():2401] Redirects installed.
+2025-02-24 17:57:12,490 INFO    MainThread:345366 [wandb_init.py:init():911] run started, returning control to user process
+2025-02-24 17:57:48,950 WARNING MsgRouterThr:345366 [router.py:message_loop():77] message_loop has been closed

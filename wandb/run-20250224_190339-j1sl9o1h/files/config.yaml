@@ -1,0 +1,53 @@
+wandb_version: 1
+
+Gamma (KL hyperparameter):
+  desc: null
+  value: 10000
+embedding_dim:
+  desc: null
+  value: 64
+num_embeddings:
+  desc: null
+  value: 256
+architecture:
+  desc: null
+  value: AE
+dataset:
+  desc: null
+  value: CIFAR-10
+num_training_updates:
+  desc: null
+  value: 250000
+learning_rate:
+  desc: null
+  value: 0.0002
+_wandb:
+  desc: null
+  value:
+    python_version: 3.9.6
+    cli_version: 0.18.5
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1740423820
+    t:
+      1:
+      - 1
+      - 41
+      - 55
+      2:
+      - 1
+      - 41
+      - 55
+      3:
+      - 16
+      - 23
+      - 37
+      4: 3.9.6
+      5: 0.18.5
+      8:
+      - 5
+      13: linux-x86_64
+Gamma:
+  desc: null
+  value: 240437

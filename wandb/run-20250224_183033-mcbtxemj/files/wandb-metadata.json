@@ -1,0 +1,134 @@
+{
+    "os": "Linux-3.10.0-693.5.2.el7.x86_64-x86_64-with-glibc2.17",
+    "python": "3.9.6",
+    "heartbeatAt": "2025-02-24T18:30:34.413615",
+    "startedAt": "2025-02-24T18:30:33.965424",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--Gamma=18000"
+    ],
+    "state": "running",
+    "program": "/share/nas2_3/amahmoud/week5/sem2work/artificial_noisy_main_autoencoder.py",
+    "codePathLocal": "artificial_noisy_main_autoencoder.py",
+    "codePath": "artificial_noisy_main_autoencoder.py",
+    "git": {
+        "remote": "https://github.com/Eazo1/Neural_Compression_Masters.git",
+        "commit": "f17fa9408e04ebaa9a7db5833450e8f0a6dd70a1"
+    },
+    "email": null,
+    "root": "/share/nas2_3/amahmoud/week5/sem2work",
+    "host": "compute-0-109.local",
+    "username": "amahmoud",
+    "executable": "/share/nas2_3/amahmoud/.venv/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 3800.0,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 3800.0,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 15.623897552490234,
+            "used": 7.337150573730469
+        }
+    },
+    "gpu": "NVIDIA A100-PCIE-40GB",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA A100-PCIE-40GB",
+            "memory_total": 42949672960
+        },
+        {
+            "name": "NVIDIA A100-PCIE-40GB",
+            "memory_total": 42949672960
+        }
+    ],
+    "memory": {
+        "total": 1511.1676559448242
+    }
+}
