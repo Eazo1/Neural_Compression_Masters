@@ -1,0 +1,10 @@
+*.pt
+*.pth
+*.npy
+*.wandb
+*.log
+*.json
+*.pyc
+*.png
+*.yaml
+precomputed/
