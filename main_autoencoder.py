@@ -57,7 +57,7 @@ num_hiddens = 256
 num_residual_layers = 2
 num_residual_hiddens = 32
 learning_rate = 2e-4
-num_training_updates = 1000
+num_training_updates = 500
 
 wandb.login(key="7391c065d23aad000052bc1f7a3a512445ae83d0")
 wandb.init(
@@ -154,4 +154,4 @@ model_save_path = os.path.join(save_directory, 'autoencoder_model.pth')
 torch.save(autoencoder.state_dict(), model_save_path)
 print("Model saved to", model_save_path)
 
-wandb.finish()
+print('Finished')
