@@ -27,4 +27,4 @@ echo ">>environment read"
 python --version 
 /share/nas2_3/amahmoud/.venv/bin/python --version
 echo ">>running"
-python3 -u /share/nas2_3/amahmoud/week5/sem2work/visualize.py
+python3 -u /share/nas2_3/amahmoud/week5/sem2work/mtl_autoencoder_wasserstein.py

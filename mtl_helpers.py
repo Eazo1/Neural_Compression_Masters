@@ -3,6 +3,9 @@ import numpy as np
 import torch
 import torch.linalg
 from torch.utils.data import DataLoader, Dataset
+import scipy
+from scipy.stats import norm
+from scipy.stats.qmc import Halton
 
 def load_unnoised_data(data_path, device):
     data = np.load(data_path, mmap_mode='r')
@@ -17,21 +20,63 @@ def kl_divergence_two_gaussians(mu_1, sigma_1, mu_2, sigma_2):
     return np.log(sigma_2 / sigma_1) + (sigma_1 ** 2 + (mu_1 - mu_2) ** 2) / (2 * sigma_2 ** 2) - 0.5
 
 
-def matrix_sqrt(M: torch.Tensor) -> torch.Tensor:
-    """
-    Compute the matrix square root of a positive semi-definite matrix M
-    using eigen-decomposition. Assumes M is symmetric PSD.
-    """
-    # Eigen-decomposition: M = V diag(e) V^T
-    e, V = torch.linalg.eigh(M)
-    # Square root of eigenvalues
-    e_sqrt = e.clamp(min=0.0).sqrt()
-    # Reconstruct the square root
-    M_sqrt = (V * e_sqrt) @ V.transpose(-2, -1)
-    return M_sqrt
+# def matrix_sqrt(M: torch.Tensor) -> torch.Tensor:
+#     """
+#     Compute the matrix square root of a positive semi-definite matrix M
+#     using eigen-decomposition. Assumes M is symmetric PSD.
+#     """
+#     # Eigen-decomposition: M = V diag(e) V^T
+#     e, V = torch.linalg.eigh(M)
+#     # Square root of eigenvalues
+#     e_sqrt = e.clamp(min=0.0).sqrt()
+#     # Reconstruct the square root
+#     M_sqrt = (V * e_sqrt) @ V.transpose(-2, -1)
+#     return M_sqrt
+
+def matrix_sqrt(M: torch.Tensor, eps: float = 1e-6) -> torch.Tensor:
+    # Ensure symmetry and add a very small epsilon for stability
+    M = (M + M.transpose(-1, -2)) / 2.0
+    M = M + eps * torch.eye(M.shape[-1], device=M.device, dtype=M.dtype)
+    
+    # Move the matrix to CPU and convert to double precision for better numerical stability
+    M_cpu = M.cpu().double()
+    
+    # Perform eigen-decomposition on CPU
+    e, V = torch.linalg.eigh(M_cpu)
+    
+    # Clamp eigenvalues to avoid negatives due to numerical issues
+    e_clamped = torch.clamp(e, min=0.0)
+    
+    # Compute the square root in double precision
+    M_sqrt_cpu = V @ torch.diag(torch.sqrt(e_clamped)) @ V.transpose(-1, -2)
+    
+    # Move the result back to the original device (GPU) and convert to float32
+    return M_sqrt_cpu.to(M.device).float()
+
+def matrix_sqrt_taylor(M: torch.Tensor) -> torch.Tensor: # first order taylor approx
+    I = torch.eye(M.shape[-1], device=M.device, dtype=M.dtype)
+    return I + 0.5 * (M - I)
+
+# def matrix_sqrt(M: torch.Tensor, num_iters: int = 10) -> torch.Tensor:
+#     # Move M to CPU for the heavy computation
+#     M_cpu = M.cpu()
+#     batch = M_cpu.shape[0] if M_cpu.dim() == 3 else 1
+#     I = torch.eye(M_cpu.shape[-1], device=M_cpu.device, dtype=M_cpu.dtype).expand(batch, -1, -1)
+    
+#     normM = M_cpu.norm(dim=(-2, -1)).unsqueeze(-1).unsqueeze(-1)
+#     Y = M_cpu / normM
+#     Z = I.clone()
+    
+#     for i in range(num_iters):
+#         T = 0.5 * (3 * I - Z @ Y)
+#         Y = Y @ T
+#         Z = T @ Z
+    
+#     Y = Y * torch.sqrt(normM)
+#     return Y.to(M.device)  # Move result back to GPU if needed
 
 def wasserstein2_two_multivariate_gaussians(m1: torch.Tensor, K1: torch.Tensor,
-                          m2: torch.Tensor, K2: torch.Tensor) -> torch.Tensor:
+                          m2: torch.Tensor, K2: torch.Tensor, correlation_matrix_sqrt: torch.Tensor) -> torch.Tensor:
     """
     Compute the squared 2-Wasserstein distance between two Gaussians N(m1, K1) and N(m2, K2).
     
@@ -49,10 +94,10 @@ def wasserstein2_two_multivariate_gaussians(m1: torch.Tensor, K1: torch.Tensor,
     mean_sq_term = (diff ** 2).sum()
     
     # 2) Covariance term
-    K2_sqrt = matrix_sqrt(K2)
+    #K2_sqrt = matrix_sqrt(K2)
     # Inside term: K2^(1/2) K1 K2^(1/2)
-    inside = K2_sqrt @ K1 @ K2_sqrt
-    inside_sqrt = matrix_sqrt(inside)
+    inside = correlation_matrix_sqrt @ K1 @ correlation_matrix_sqrt
+    inside_sqrt = matrix_sqrt_taylor(inside)
     
     cov_term = torch.trace(K1 + K2 - 2.0 * inside_sqrt)
     
@@ -81,6 +126,18 @@ def chi_squared_covariance(Sigma_recon, Sigma_orig):
 
     return chi2 #.item()  # Return scalar value
 
+def chi_squared_residuals(m_residual, Sigma_orig):
+    """
+    Compute chi-squared statistic for a single residual vector.
+    Args:
+        m_residual (torch.Tensor): Residual vector (flattened image).
+        Sigma_orig (torch.Tensor): Original covariance matrix.
+    Returns:
+        torch.Tensor: Chi-squared scalar value.
+    """
+    Sigma_inv = torch.linalg.inv(Sigma_orig)
+    chi2 = m_residual.T @ Sigma_inv @ m_residual
+    return chi2
 
 def generate_correlated_noise(correlation_matrix, device="cpu"):
     N = correlation_matrix.shape[0]  # This will be H * W
@@ -155,7 +212,42 @@ def add_correlated_noise(images, cholesky_factor):
 
     return images + correlated_noise  # Keep batch & channel structure intact
 
+def add_correlated_noise_halton(images, cholesky_factor, seed=42):
 
+    device = cholesky_factor.device
+    images = images.to(device)
+    
+    # Ensure images is 4D: (B, C, H, W)
+    if images.dim() == 3:
+        images = images.unsqueeze(0)
+    
+    B, C, H, W = images.shape
+    # Total number of noise values needed per image.
+    num_elements = C * H * W
+    
+    # Create a Halton sampler in one dimension (each sample is a scalar).
+    # We generate a total of B * num_elements samples.
+    sampler = Halton(d=1, scramble=True, seed=seed)
+    u = sampler.random(n=B * num_elements)  # shape: (B*num_elements, 1)
+    
+    # Map the uniform samples to standard normal using the inverse CDF.
+    noise_values = norm.ppf(u)  # still shape: (B*num_elements, 1)
+    
+    # Convert to a torch.Tensor and reshape to (B, C, H, W)
+    noise = torch.tensor(noise_values, dtype=torch.float32, device=device).view(B, C, H, W)
+    
+    # Flatten noise for the matrix multiplication step.
+    # Rearranging to shape: (B, Pixels, C)
+    noise_flat = noise.view(B, C, -1).transpose(1, 2)
+    
+    # Apply the Cholesky transformation.
+    # Assuming cholesky_factor is shaped (C, C) and applied per pixel.
+    correlated_noise = torch.matmul(cholesky_factor, noise_flat).transpose(1, 2)
+    
+    # Reshape back to (B, C, H, W)
+    correlated_noise = correlated_noise.view(B, C, H, W)
+    
+    return images + correlated_noise
 
 def compute_covariance_torch(noisy_images):
     """

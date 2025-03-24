@@ -15,7 +15,7 @@ from PIL import Image
 import io
 from scipy.stats import norm
 
-def load_correlation_matrix(path="/share/nas2_3/amahmoud/week5/sem2work/precomputed/correlation_matrix.pt", device="cpu"):
+def load_correlation_matrix(path="/share/nas2_3/amahmoud/week5/sem2work/precomputed/point_spread_covariance_matrix2.pt", device="cpu"):
     return torch.load(path).to(device)
 
 def generate_correlated_noise(correlation_matrix, device="cpu"):
@@ -52,7 +52,7 @@ def add_correlated_noise(images, cholesky_factor):
     N = H * W  # Total number of pixels (H * W)
 
     # Generate standard Gaussian noise with shape (B, 1, N)
-    noise = torch.randn((B, 1, N), device=images.device)
+    noise = torch.randn((B, 1, N), device=images.device, dtype=torch.float64) ### LATER: MAKE SURE OG IS 64 NOT 32
 
     # Apply Cholesky factor (This step adds correlation)
     correlated_noise = torch.matmul(cholesky_factor, noise.squeeze(1).T).T.unsqueeze(1)
@@ -78,7 +78,7 @@ class MemoryMappedDataset(Dataset):
 
     def __getitem__(self, idx):
         # Returns a tensor in the shape stored in the npy file.
-        return torch.tensor(self.data[idx], dtype=torch.float32)
+        return torch.tensor(self.data[idx], dtype=torch.float64)
 
 # Modified Dataset class to add noise once for each image
 class MemoryMappedDatasetWithNoise(MemoryMappedDataset):
@@ -87,11 +87,11 @@ class MemoryMappedDatasetWithNoise(MemoryMappedDataset):
         self.cholesky_factor = cholesky_factor  # Store precomputed Cholesky factor
 
     def __getitem__(self, idx):
-        image = torch.tensor(self.data[idx], dtype=torch.float32, device=self.device)
+        image = torch.tensor(self.data[idx], dtype=torch.float64, device=self.device)
         
         if image.numel() == 0:
             print(f"[ERROR] Skipping empty image at index {idx}")
-            return torch.zeros((150, 150), dtype=torch.float32, device=self.device)
+            return torch.zeros((150, 150), dtype=torch.float64, device=self.device)
         
         # Ensure correct shape: Remove last dim if it's (H, W, 1)
         if image.dim() == 3 and image.shape[-1] == 1:
@@ -133,7 +133,7 @@ def generate_noisy_copies(original_image, cholesky_factor, num_copies=50, device
     copies = []
     
     # Convert image to float tensor on the specified device.
-    image = original_image.to(dtype=torch.float32, device=device)
+    image = original_image.to(dtype=torch.float64, device=device)
     
     # Normalize the image shape.
     # If image is 4D and has shape (1, 1, H, W), squeeze to get (H, W)
@@ -161,6 +161,42 @@ def generate_noisy_copies(original_image, cholesky_factor, num_copies=50, device
         copies.append(noisy_tensor)
     
     return torch.stack(copies, dim=0)
+
+def check_invertibility(matrix, tolerance=1e-12):
+    """
+    Checks if a square matrix is invertible based on its determinant and eigenvalues.
+
+    Args:
+        matrix (torch.Tensor): The square matrix to check.
+        tolerance (float): Tolerance for considering a value as zero.
+
+    Returns:
+        bool: True if the matrix is invertible, False otherwise.
+        str: A message indicating the reason for invertibility or non-invertibility.
+    """
+
+    if not isinstance(matrix, torch.Tensor):
+        return False, "Input must be a torch.Tensor."
+
+    if matrix.ndim != 2 or matrix.shape[0] != matrix.shape[1]:
+        return False, "Input must be a square matrix."
+
+    try:
+        # Check determinant
+        #det = torch.linalg.det(matrix)
+        #if abs(det) < tolerance:
+        #    return False, f"Matrix is not invertible: determinant ({det}) is close to zero."
+
+        # Check eigenvalues (more robust)
+        eigenvalues = torch.linalg.eigvalsh(matrix) #eigvalsh is used because covariance matrices are symmetric.
+        if torch.any(torch.abs(eigenvalues) < tolerance):
+            return False, "Matrix is not invertible: eigenvalue(s) close to zero."
+
+        return True, "Matrix is invertible."
+
+    except RuntimeError as e:
+        return False, f"Error during invertibility check: {e}"
+
 # -------------------------------
 # Main Code
 # -------------------------------
@@ -190,7 +226,7 @@ def main():
     random_index = torch.randint(0, num_train, (1,)).item()
     print(f"Randomly selected image index: {random_index}")
     original_image_np = train_data_mmap[random_index]
-    original_image = torch.tensor(original_image_np, dtype=torch.float32)
+    original_image = torch.tensor(original_image_np, dtype=torch.float64)
     
     # -------------------------------
     # Generate noisy copies of the selected image using PyTorch
@@ -216,6 +252,9 @@ def main():
     
     elapsed_time = time.time() - start_time
     print(f"Total execution time of main logic: {elapsed_time:.2f} seconds")
+    
+    invertible_bool, message_bool = check_invertibility(correlation_matrix)
+    print(f"Matrix: Invertible={invertible_bool}, Message='{message_bool}'")
 
 if __name__ == '__main__':
     main()
