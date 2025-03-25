@@ -23,7 +23,7 @@ from mtl_helpers import MemoryMappedDataset, MemoryMappedDatasetWithCorrelatedNo
 #NOISE_MEAN = 0.0 # Mean of the Gaussian noise
 #NOISE_STD = 4.0 # Standard deviation of the Gaussian noise
 #GAMMA = 10000  # Hyperparameter for the KL divergence term (to be removed, replaced with Wasserstein-2 term)
-KAPPA = 0  # Hyperparameter for the paper-equivalent chi-square term
+KAPPA = 10  # Hyperparameter for the paper-equivalent chi-square term
 #DELTA = 1  # Hyperparameter for the chi-square term
 #GAMMA = 0
 
@@ -83,9 +83,21 @@ def display_images(images: torch.Tensor,
 correlation_matrix_path = "precomputed/point_spread_covariance_matrix2.pt"
 correlation_matrix = torch.load(correlation_matrix_path, map_location="cuda" if torch.cuda.is_available() else "cpu")
 Sigma_orig = correlation_matrix.to(dtype=torch.float32)
+Sigma_orig = Sigma_orig.float()
+
+Sigma_orig_inv = torch.linalg.inv(Sigma_orig)
+
+OG_mean_vector_path = "/share/nas2_3/amahmoud/week5/sem2work/precomputed/images_mean_vector2.pt"
+OG_mean_vector = torch.load(OG_mean_vector_path, map_location="cuda" if torch.cuda.is_available() else "cpu")
+OG_mean_vector = OG_mean_vector.float()
 
 cholesky_factor_path = "/share/nas2_3/amahmoud/week5/sem2work/precomputed/point_spread_cholesky_factor2.pt"
 cholesky_factor = torch.load(cholesky_factor_path, map_location="cuda" if torch.cuda.is_available() else "cpu")
+cholesky_factor = cholesky_factor.float()
+
+correlation_matrix_sqrt_path = "/share/nas2_3/amahmoud/week5/sem2work/precomputed/covariance_matrix_sqrt2.pt"
+correlation_matrix_sqrt = torch.load(correlation_matrix_sqrt_path, map_location="cuda" if torch.cuda.is_available() else "cpu")
+correlation_matrix_sqrt = correlation_matrix_sqrt.float()
 
 # Create datasets and loaders
 train_dataset = load_unnoised_data('/share/nas2_3/amahmoud/week5/galaxy_out/train_data.npy', device=None)
@@ -123,7 +135,7 @@ num_residual_layers = 2
 num_residual_hiddens = 32
 learning_rate = 2e-4
 
-num_training_updates = 10
+num_training_updates = 2500
 
 # for the monte carlo in the training loop
 num_noisy_samples = 1000
@@ -179,29 +191,11 @@ while iteration < num_training_updates:
         
         mse_loss = F.mse_loss(recon, noised_images, reduction='sum')
         
-        chi2 = torch.tensor(0.0, device=device)  
+        #chi2 = torch.tensor(0.0, device=device)  
         
-        sub_batch_size = 1000
-        num_sub_batches = num_noisy_samples // sub_batch_size
+        m_residual = (recon - noised_images).view(-1, 1)
         
-        # monte carlo estimate of the KL divergence
-        for i in range(images.size(0)):
-            chi2_sub = torch.tensor(0.0, device=device)
-            for _ in range(num_sub_batches):  # Mini-batches to save memory
-                noisy_images = torch.stack([add_correlated_noise(images[i], cholesky_factor) for _ in range(sub_batch_size)])
-                if noisy_images.dim() == 5:  
-                    noisy_images = noisy_images.squeeze(2)
-
-                recon_images = autoencoder(noisy_images) 
-                Sigma_recon, mean_image = compute_covariance_torch(recon_images)
-
-                chi2_sub += chi_squared_covariance(Sigma_recon, Sigma_orig)
-                
-                # Free up memory for the next batch
-                del noisy_images, recon_images, Sigma_recon
-                torch.cuda.empty_cache()
-            
-            chi2 += chi2_sub
+        chi2 = m_residual.T @ Sigma_orig_inv @ m_residual
         
         loss = mse_loss + KAPPA * chi2  # No .item() here!
         
@@ -218,8 +212,8 @@ while iteration < num_training_updates:
         
         wandb.log({
                     "train/loss_components.mse": mse_loss.item(),
-                    "train/loss_components.chi2": (chi2).item(),
-                    "train/loss_components.K*chi2": (KAPPA * chi2.item())
+                    "train/loss_components.p_chi2": (chi2).item(),
+                    "train/loss_components.K*p_chi2": (KAPPA * chi2.item())
                     })
         
         iteration += 1
@@ -246,34 +240,18 @@ while iteration < num_training_updates:
                     
                     mse_loss_val = F.mse_loss(recon_val, val_images, reduction='sum')
                 
-                    chi2_val = torch.tensor(0.0, device=device)
-                    
-                    # monte carlo estimate of the KL divergence
-                    for i in range(images.size(0)):
-                        chi2_sub = torch.tensor(0.0, device=device)
-                        for _ in range(num_sub_batches):  # Mini-batches to save memory
-                            with torch.no_grad(): # Save memory
-                                noisy_images = torch.stack([add_correlated_noise(noised_val_images[i], cholesky_factor) for _ in range(sub_batch_size)])
-                                if noisy_images.dim() == 5:  
-                                    noisy_images = noisy_images.squeeze(2)
-                                recon_images = autoencoder(noisy_images) 
-                                Sigma_recon, mean_image = compute_covariance_torch(recon_images)
-
-                            chi2_sub += chi_squared_covariance(Sigma_recon, Sigma_orig)
-                            
-
-                            # Free up memory for the next batch
-                            del noisy_images, recon_images, Sigma_recon
-                            torch.cuda.empty_cache()
-                        
-                        chi2_val += chi2_sub
+                    m_residual_val = (recon - noised_images).view(-1, 1)
+        
+                    chi2_val = m_residual_val.T @ Sigma_orig_inv @ m_residual_val
                         
                     loss_val = mse_loss_val + KAPPA * chi2_val
                     total_val_loss += loss_val.item()
                     num_batches += 1
 
             avg_val_loss = total_val_loss / num_batches if num_batches > 0 else float("inf")
-            wandb.log({"validation/loss": avg_val_loss})
+            wandb.log({"validation/loss": avg_val_loss,
+                       "validation/loss_components.mse": mse_loss_val.item(),
+                        "validation/loss_components.p_chi2": (chi2_val).item(),})
             print(f"Validation loss: {avg_val_loss:.4f}")
             
             autoencoder.train()
@@ -305,4 +283,5 @@ wandb.log({"reconstruction_images": wandb.Image(fig_recon)})
 plt.close(fig_recon)
 
 # Save the model
-torch.save(autoencoder.state_dict(), "mtl_autoencoder_model.pt")
+torch.save(autoencoder.state_dict(), "mtl_autoencoder_model2.pt")
+print('Done and Saved.')

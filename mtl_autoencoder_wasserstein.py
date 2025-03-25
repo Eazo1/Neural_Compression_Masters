@@ -26,7 +26,7 @@ from mtl_helpers import MemoryMappedDataset, MemoryMappedDatasetWithCorrelatedNo
 #KAPPA = 0.01  
 #DELTA = 1  # Hyperparameter for the chi-square term
 #GAMMA = 0
-DIGAMMA = 1 # Hyperparameter for the Wasserstein-2 term
+DIGAMMA = 0 # Hyperparameter for the Wasserstein-2 term
 
 def display_images(images: torch.Tensor, 
                    recon_images: torch.Tensor, 
