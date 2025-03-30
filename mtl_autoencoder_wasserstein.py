@@ -26,7 +26,7 @@ from mtl_helpers import MemoryMappedDataset, MemoryMappedDatasetWithCorrelatedNo
 #KAPPA = 0.01  
 #DELTA = 1  # Hyperparameter for the chi-square term
 #GAMMA = 0
-DIGAMMA = 0 # Hyperparameter for the Wasserstein-2 term
+DIGAMMA = 1 # Hyperparameter for the Wasserstein-2 term
 
 def display_images(images: torch.Tensor, 
                    recon_images: torch.Tensor, 
@@ -315,4 +315,4 @@ wandb.log({"reconstruction_images": wandb.Image(fig_recon)})
 plt.close(fig_recon)
 
 # Save the model
-torch.save(autoencoder.state_dict(), "mtl_autoencoder_model.pt")
+torch.save(autoencoder.state_dict(), "wasserstein_autoencoder_model.pt")
