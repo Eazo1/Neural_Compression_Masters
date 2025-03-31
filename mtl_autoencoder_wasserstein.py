@@ -232,7 +232,7 @@ while iteration < num_training_updates:
         
         iteration += 1
 
-        if iteration % 100 == 0:
+        if iteration % 1000 == 0:
             print(f"Iteration {iteration}, training loss: {loss.item():.4f}")
                     
             # Validation loop

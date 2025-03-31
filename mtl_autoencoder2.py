@@ -135,7 +135,7 @@ num_residual_layers = 2
 num_residual_hiddens = 32
 learning_rate = 2e-4
 
-num_training_updates = 2500
+num_training_updates = 500
 
 # for the monte carlo in the training loop
 num_noisy_samples = 1000
@@ -202,6 +202,10 @@ while iteration < num_training_updates:
         # Accumulate gradients instead of updating every batch
         loss.backward()
         
+        for name, param in autoencoder.named_parameters():
+            if param.grad is not None:
+                print(f"{name} grad norm: {param.grad.norm().item()}")
+        
         # Perform optimizer step and zero the gradients after `accumulation_steps`
         if (iteration + 1) % accumulation_steps == 0:
             optimizer.step()  # Update model parameters
@@ -215,6 +219,8 @@ while iteration < num_training_updates:
                     "train/loss_components.p_chi2": (chi2).item(),
                     "train/loss_components.K*p_chi2": (KAPPA * chi2.item())
                     })
+        
+        KAPPA = (mse_loss.item() / (chi2.item() + 1e-8)) * 10  
         
         iteration += 1
 

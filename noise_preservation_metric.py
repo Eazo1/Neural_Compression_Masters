@@ -3,9 +3,13 @@ import torch.nn as nn
 from torch.utils.data import DataLoader
 import numpy as np
 
-from mtl_helpers import load_unnoised_data
+from mtl_helpers import load_unnoised_data, add_correlated_noise
 from encoder import Encoder
 from decoder import Decoder
+
+cholesky_factor_path = "/share/nas2_3/amahmoud/week5/sem2work/precomputed/point_spread_cholesky_factor2.pt"
+cholesky_factor = torch.load(cholesky_factor_path, map_location="cuda" if torch.cuda.is_available() else "cpu")
+cholesky_factor = cholesky_factor.float()
 
 # Define Autoencoder
 class Autoencoder(nn.Module):
@@ -30,7 +34,8 @@ target_var = 2 * np.square(sigma)  # Theoretical variance of the difference delt
 # Load trained AE model
 
 #model_save_path = '/share/nas2_3/amahmoud/week5/sem2work/mtl_autoencoder_model.pt'
-model_save_path = '/share/nas2_3/amahmoud/week5/galaxy_out/autoencoder_model.pth'
+model_save_path = '/share/nas2_3/amahmoud/week5/sem2work/wasserstein_autoencoder_model.pt'
+#model_save_path = '/share/nas2_3/amahmoud/week5/galaxy_out/autoencoder_model.pth'
 
 autoencoder = Autoencoder(num_hiddens, num_residual_layers, num_residual_hiddens).to(device)
 autoencoder.load_state_dict(torch.load(model_save_path, map_location=device))
@@ -52,8 +57,9 @@ for batch in valid_loader:
         batch = batch.squeeze(2)
     elif batch.dim() == 3:
         batch = batch.unsqueeze(1)
-            
+    
     batch = batch.to(device)
+    batch = add_correlated_noise(batch, cholesky_factor)
 
     with torch.no_grad():
         recon = autoencoder(batch)

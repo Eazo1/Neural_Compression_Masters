@@ -85,7 +85,7 @@ print("Starting training...")
 while iteration < num_training_updates:
     for images in train_loader:
         # Debug print: show shape before processing.
-        print("Shape of images before processing:", images.shape)
+        #print("Shape of images before processing:", images.shape)
         
         # If the tensor has 5 dimensions (e.g., [batch, 1, 1, H, W]), remove the extra dimension.
         if images.dim() == 5:
