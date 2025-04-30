@@ -103,6 +103,34 @@ def wasserstein2_two_multivariate_gaussians(m1: torch.Tensor, K1: torch.Tensor,
     
     return mean_sq_term + cov_term
 
+def difference_two_covariance(m1: torch.Tensor, K1: torch.Tensor,
+                          m2: torch.Tensor, K2: torch.Tensor, correlation_matrix_sqrt: torch.Tensor) -> torch.Tensor:
+    """
+    Compute the squared 2-Wasserstein distance between two Gaussians N(m1, K1) and N(m2, K2).
+    
+    Args:
+        m1: Mean of the first distribution (shape [d]).
+        K1: Covariance of the first distribution (shape [d, d]).
+        m2: Mean of the second distribution (shape [d]).
+        K2: Covariance of the second distribution (shape [d, d]).
+    
+    Returns:
+        A scalar tensor representing W_2^2(N(m1,K1), N(m2,K2)).
+    """
+    # 1) Squared difference of means
+    diff = m1 - m2
+    mean_sq_term = (diff ** 2).sum()
+    
+    # 2) Covariance term
+    #K2_sqrt = matrix_sqrt(K2)
+    # Inside term: K2^(1/2) K1 K2^(1/2)
+    inside = correlation_matrix_sqrt @ K1 @ correlation_matrix_sqrt
+    inside_sqrt = matrix_sqrt_taylor(inside)
+    
+    cov_term = torch.trace(K1 + K2 - 2.0 * inside_sqrt)
+    
+    return mean_sq_term + cov_term
+
 def chi_squared_covariance(Sigma_recon, Sigma_orig):
     """
     Compute the Chi-Squared statistic between the estimated and expected noise covariance matrices.

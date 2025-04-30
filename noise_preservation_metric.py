@@ -11,6 +11,34 @@ cholesky_factor_path = "/share/nas2_3/amahmoud/week5/sem2work/precomputed/point_
 cholesky_factor = torch.load(cholesky_factor_path, map_location="cuda" if torch.cuda.is_available() else "cpu")
 cholesky_factor = cholesky_factor.float()
 
+# # ------------------------------------------------------------
+# # 2. Scale C so that σ_beam = 0.15 mJy/beam  →  correct per‐pixel noise
+# # ------------------------------------------------------------
+# # 2.1 Convert σ_beam to Jy
+# sigma_beam_jy = 0.15e-3                        # 0.15 mJy → 1.5×10⁻⁴ Jy
+
+# # 2.2 Compute pixels per beam for FIRST (5″ FWHM, 1.8″ pix)
+# from math import pi, log
+# theta = 5.0                                    # beam FWHM in arcsec
+# pix   = 1.8                                    # pixel size in arcsec
+# n_pix_beam = (pi * theta**2 / (4 * log(2))) / (pix * pix)
+
+# # 2.3 Per‐pixel uncorrelated RMS
+# sigma_pix_uncor = sigma_beam_jy / np.sqrt(n_pix_beam)
+
+# # 2.4 Scale the unit‐C to physical noise
+# cholesky_factor = cholesky_factor * sigma_pix_uncor   # ← HERE
+
+# # ------------------------------------------------------------
+# # 3. Re‐derive σ_pix from the scaled C  & diagnostic print
+# # ------------------------------------------------------------
+# diag_cov   = (cholesky_factor @ cholesky_factor.T).diag()
+# sigma_pix  = torch.sqrt(diag_cov.mean()).item()
+# target_var = 2 * sigma_pix**2
+# print("σ_pix (from C)   =", sigma_pix)
+# print("target_var (2σ²) =", target_var)
+
+
 # Define Autoencoder
 class Autoencoder(nn.Module):
     def __init__(self, num_hiddens, num_residual_layers, num_residual_hiddens):
@@ -29,13 +57,14 @@ num_hiddens = 256
 num_residual_layers = 2
 num_residual_hiddens = 32
 sigma = 0.15  # assumed noise std
+#sigma = 0.15e-3  # assumed noise std
 target_var = 2 * np.square(sigma)  # Theoretical variance of the difference delta
 
 # Load trained AE model
 
 #model_save_path = '/share/nas2_3/amahmoud/week5/sem2work/mtl_autoencoder_model.pt'
-model_save_path = '/share/nas2_3/amahmoud/week5/sem2work/wasserstein_autoencoder_model.pt'
-#model_save_path = '/share/nas2_3/amahmoud/week5/galaxy_out/autoencoder_model.pth'
+#model_save_path = '/share/nas2_3/amahmoud/week5/sem2work/wasserstein_autoencoder_model.pt'
+model_save_path = '/share/nas2_3/amahmoud/week5/galaxy_out/autoencoder_model.pth'
 
 autoencoder = Autoencoder(num_hiddens, num_residual_layers, num_residual_hiddens).to(device)
 autoencoder.load_state_dict(torch.load(model_save_path, map_location=device))
@@ -47,7 +76,16 @@ for param in autoencoder.parameters():
 valid_dataset = load_unnoised_data('/share/nas2_3/amahmoud/week5/galaxy_out/valid_data_original.npy', device=None)
 valid_loader = DataLoader(valid_dataset, batch_size=1, shuffle=True)
 
+
 print('Data Loaded Successfully')
+
+batch0 = next(iter(valid_loader))
+if batch0.dim() == 5: batch0 = batch0.squeeze(2)
+elif batch0.dim() == 3: batch0 = batch0.unsqueeze(1)
+batch0_noisy = add_correlated_noise(batch0, cholesky_factor)
+
+print("var(clean) =", torch.var(batch0).item())
+print("var(noisy) =", torch.var(batch0_noisy).item())
 
 # Collect all residuals
 all_deltas = []

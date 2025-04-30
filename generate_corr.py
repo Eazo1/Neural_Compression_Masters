@@ -85,40 +85,36 @@ def find_correlation_matrix(image_size, fwhm_x, fwhm_y, pixel_scale=1.8, device=
     
     return C_torch
 
-def find_covariance_matrix(image_size, fwhm, pixel_scale=1.8): # Deya's new one
-    # Convert fwhm to sigma (Gaussian standard deviation)
-    sigma = fwhm / (2 * np.sqrt(2 * np.log(2))) * u.arcsec
+def find_covariance_matrix(image_size, sigma,rms_noise=0.15): 
+    """
+    Computes the covariance matrix for an image of given size based on a Gaussian kernel.
+
+    Parameters:
+        image_size (int): The dimensionality of the square image.
+        sigma (float): The standard deviation of the target distribution.
+
+    Returns:
+        np.ndarray: The covariance matrix computed using a Gaussian kernel, with the diagonal set to 1.
+    """
+    # Create a meshgrid of pixel indices
     x, y = np.meshgrid(np.arange(image_size), np.arange(image_size), indexing="ij")
-
-    # Apply the pixel scale to get angular coordinates
-    ra = x * pixel_scale * u.arcsec  
-    dec = y * pixel_scale * u.arcsec  
-
-    ra_flat = ra.ravel()
-    dec_flat = dec.ravel()
-
-    # Create differences in RA and Dec accounting for the cos(dec) factor in RA differences
-    d_ra = (ra_flat[:, None] - ra_flat[None, :]) * np.cos(dec_flat[:, None].to_value(u.rad))
-    d_dec = (dec_flat[:, None] - dec_flat[None, :])
+    pixel_coords = np.stack((x.ravel(), y.ravel()), axis=1)
+    i, j = pixel_coords[:, 0], pixel_coords[:, 1]
     
-    # Calculate sigma inverse squared (with proper units)
-    sigma_inv_sq = (1 / sigma)**2
-    distance_sq = d_ra**2 + d_dec**2
+    # Compute the pairwise distances between pixel coordinates, scaled by 1.8
+    di = i[:, None] - i[None, :]
+    dj = j[:, None] - j[None, :]
+    d = 1.8 * np.sqrt(di**2 + dj**2)
     
-
-    # Compute the exponent of the Gaussian using squared differences
-    exponent = -0.5 * ((distance_sq) * sigma_inv_sq).to_value(u.dimensionless_unscaled)
-    norm = 1 / (2 * np.pi * sigma.value**2)
-
-    # Normalization constant
-    C =norm * np.exp(exponent)
-
-    # Set diagonal elements to 1 (self-correlation)
-    np.fill_diagonal(C, 1.0)
+    # Compute the covariance matrix using a Gaussian kernel
+    C = (1 / np.sqrt(2 * np.pi * sigma**2)) * np.exp(-d**2 / (2 * sigma**2))
     
-    C = torch.tensor(C, dtype=torch.float64, device=device)
+    # Set the diagonal elements to 1
+    np.fill_diagonal(C, 1) 
 
-    return C
+    C_torch = torch.tensor(C * rms_noise**2, dtype=torch.float32, device=device)
+    
+    return C_torch
 
 
 def compute_mean_vector_from_npy(data_path, given_cholesky_factor, device="cpu"):
